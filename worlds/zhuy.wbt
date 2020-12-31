@@ -1,0 +1,248 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  info [
+    "Simple TurtleBot3 Burger simulation that can be controlled by a ROS."
+  ]
+  title "ROS2 simulation of the TurtleBot3 Burger robot"
+}
+Viewpoint {
+  orientation -0.3787486787295339 0.6397332650849201 0.6687980172701021 4.018289268766293
+  position 5.494012275322698 0.3222551075320077 0.16208602366208258
+}
+TexturedBackground {
+  texture "empty_office"
+  skybox FALSE
+}
+PottedTree {
+  translation 7 -4 0
+  rotation 1 0 0 1.5708
+  name "potted tree(5)"
+}
+PottedTree {
+  translation 5.8 3.3 0
+  rotation 1 0 0 1.5708
+  name "potted tree(8)"
+}
+Floor {
+  translation 7.5 0 0
+  rotation 1 0 0 1.571
+  name "floor(1)"
+  size 5 10
+  tileSize 2 2
+  appearance CementTiles {
+    textureTransform TextureTransform {
+      scale 0.6 0.6
+    }
+  }
+}
+Window {
+  translation 6.5 -5.1 0
+  rotation 1 0 0 1.5708
+  name "window(1)"
+  size 1 2.4 0.2
+}
+Wall {
+  translation 7.5 5.1 0
+  rotation 1 0 0 1.5708
+  name "wall(5)"
+  size 5 2.4 0.2
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 7 2.4
+    }
+  }
+}
+Wall {
+  translation 5.5 -5.1 0
+  rotation 1 0 0 1.5708
+  name "wall(7)"
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 7 2.4
+    }
+  }
+}
+Wall {
+  translation 8.5 -5.1 0
+  rotation 1 0 0 1.5708
+  name "wall(10)"
+  size 3 2.4 0.2
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 7 2.4
+    }
+  }
+}
+Wall {
+  translation 10.1 0 0
+  rotation 0.5774392558154635 -0.5774372558145774 -0.5771742556980638 2.09426
+  name "wall(6)"
+  size 10.4 2.4 0.2
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 7 2.4
+    }
+  }
+}
+Wall {
+  translation 5 2 0
+  rotation -0.5771749225682377 -0.5774379225329546 -0.5774379225329546 -2.094265307179586
+  name "wall(2)"
+  size 6 2.4 0.2
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 7 2.4
+    }
+  }
+}
+Wall {
+  translation 5 -3.5 0
+  rotation -0.5771749225682377 -0.5774379225329546 -0.5774379225329546 -2.094265307179586
+  name "wall(1)"
+  size 3 2.4 0.2
+  appearance Roughcast {
+    textureTransform TextureTransform {
+      scale 7 2.4
+    }
+  }
+}
+Radiator {
+  translation 7.33 4.87 0.38
+  rotation -0.5771735891339322 0.5774385889452899 0.5774385889452899 -2.094255307179586
+}
+Door {
+  hidden translation_5 -0.009468991015811667 -2.220446049250313e-16 -0.02637142533348083
+  hidden rotation_5 0 1 0 0.05818777212067333
+  translation 5 -1.5 0
+  rotation -0.5771729222626045 0.5774399222266431 0.5774379222269126 -2.094265307179586
+  position -1.4418122284423294
+  wallAppearance Roughcast {
+    textureTransform TextureTransform {
+      scale 7 2.4
+    }
+  }
+  frameAppearance Roughcast {
+    textureTransform TextureTransform {
+      scale 1 2.4
+    }
+  }
+}
+Cabinet {
+  hidden translation_6 -0.1700000316129877 1.0698612792623914 0.4999999863753164
+  hidden rotation_6 -0.9983630419501318 0.00025717020675654275 0.05719414595537074 -5.238008787003174e-05
+  hidden position_6_0 0.0025241557409408253
+  hidden translation_7 -6.339502027219446e-07 0 -0.0005023064590507633
+  hidden rotation_7 0 1 0 0.002524155740879972
+  hidden translation_10 0.19999996813806797 1.0698612789053865 0.4999999853216224
+  hidden rotation_10 -0.9988171016881636 0.00020703186836444984 -0.04862462866759912 -5.235674416011327e-05
+  hidden position_10_0 -0.0029695728726534263
+  hidden translation_11 7.45812506502963e-07 0 -0.0005023025131609144
+  hidden rotation_11 0 -1 0 0.002969572872660244
+  hidden translation_14 0.28499996849252796 0.5698585852655863 0.499999995383698
+  hidden rotation_14 -0.9999999810341544 0.0001946738707191481 5.811602057398653e-06 -5.2689478110523153e-05
+  hidden position_14_0 -0.0010193476126957707
+  hidden translation_15 0 0 -0.0010193476126957707
+  hidden translation_22 0.11499996768408005 0.36985858486683115 0.49999999538340845
+  hidden rotation_22 -0.999999973920393 0.00022838385864474114 1.6313767490143035e-07 -5.269245022005821e-05
+  hidden position_22_0 -0.0010304713730218558
+  hidden translation_23 0 0 -0.0010304713730218558
+  hidden translation_30 0.28499996850193066 0.36985858364847335 0.4999999953833303
+  hidden rotation_30 -0.9999999810503901 0.00019459254842487796 5.74104685752774e-06 -5.269292832673526e-05
+  hidden position_30_0 -0.0010305968696963138
+  hidden translation_31 0 0 -0.0010305968696963138
+  hidden translation_38 -6.703590793577519e-08 0.1497062159166333 0.49999998040945215
+  hidden rotation_38 -0.9999999743565082 0.00022646622266403444 1.814477392554756e-07 -0.0001100055352714338
+  hidden position_38_0 -0.0011389834843778604
+  hidden translation_39 0 0 -0.0011389834843778604
+  translation 9.5 -2.5 0
+  rotation -0.577173922415998 0.5774389223803766 0.577437922380511 -2.094265307179586
+}
+CardboardBox {
+  translation 9.7 4.7 0.3
+}
+CardboardBox {
+  translation 9 4.6 0.3
+  rotation -0.9957680130762819 0.06498486029112283 -0.06498486029112283 -1.575
+  name "cardboard box(1)"
+}
+CardboardBox {
+  translation 9.6 4 0.3
+  rotation -0.9957680130762819 -0.06498486029112283 0.06498486029112283 -1.575
+  name "cardboard box(2)"
+}
+CardboardBox {
+  translation 9.4 4.5 0.9
+  rotation 0.8659700089000069 0.4044160041563855 0.2941830030234658 1.76738
+  name "cardboard box(3)"
+}
+Fridge {
+  hidden position_0_0 0.14121645835614152
+  hidden position_0_1 0.15036864994672924
+  hidden rotation_1 0 1 0 0.1412164583561407
+  hidden rotation_2 0 1 0 0.15036864994672908
+  translation 5.7 4.64 0
+  rotation 0.9999999739747023 7.19233981281721e-09 -0.0002281459940624324 1.570565307179586
+}
+FloorLight {
+  translation 8.84 1 0
+  rotation 1 0 0 1.5708
+  name "floor light(1)"
+  bulbColor 0.26331 0.374105 0.963333
+  pointLightColor 0.0350805 0.179232 0.956664
+  pointLightIntensity 4
+  pointLightCastShadows TRUE
+}
+Sofa {
+  translation 9 -0.518 0
+  rotation -0.00020367293274917508 -0.7071067665202111 -0.7071067665202111 3.14159
+}
+Armchair {
+  translation 7.62 1.03 0
+  rotation -0.5771739224148437 0.5774399223790873 0.5774369223794905 -2.094265307179586
+}
+LandscapePainting {
+  translation 8.5 -4.98 1.2
+  rotation -0.00020367293274917508 -0.7071067665202111 -0.7071067665202111 3.14159
+}
+PottedTree {
+  translation 9.17 -1.7 0
+  rotation 1 0 0 1.5708
+}
+PottedTree {
+  translation 5.6 -4.5 0
+  rotation 1 0 0 1.5708
+  name "potted tree(3)"
+}
+Table {
+  translation 7.7 -0.52 0
+  rotation -0.5774382559674643 0.577437255967021 0.5771752558508814 -2.094265307179586
+  size 1.3 0.5 0.8
+}
+DirectionPanel {
+  translation 8 5 1.5
+  rotation 1 0 0 1.571
+  textSize 0.175
+  text "Fresh beer :)"
+  right FALSE
+  left TRUE
+}
+BunchOfSunFlowers {
+  translation 7.68 -0.52 0.5
+  rotation -1 0 0 -1.5708053071795867
+}
+zhuyFourWheelsRobot {
+  hidden position_0_0 269.7133143371224
+  hidden position_0_1 886.4118487573097
+  hidden position_0_2 326.7479063493878
+  hidden translation_8 -0.03000047411833684 -4.319742130665105e-08 -0.014998034412846186
+  hidden rotation_8 -0.6225826288044193 -0.19818410781934592 -0.7570428849932008 -3.074738484036365
+  hidden rotation_12 -0.7956029269358407 -2.2586848747603755e-16 0.6058184403359833 3.141592653589793
+  translation 6.078233231710846 -0.001462156200549813 0.029769749981030446
+  rotation 0.0017763997516359266 0.025745153091688046 0.9996669602903798 -0.14914611690059323
+  extensionSlot [
+    RobotisLds01 {
+      translation 0 -0.08 0
+      rotation 0 -1 0 -5.307179586466759e-06
+    }
+  ]
+}

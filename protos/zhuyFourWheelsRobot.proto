@@ -1,0 +1,212 @@
+ PROTO zhuyFourWheelsRobot [
+  field SFVec3f    translation     6 0 0                 # Is `Transform.translation`.
+  field SFRotation rotation        0.969 0.175 0.177 1.6         # Is `Transform.rotation`.
+  field SFString   name            "zhuyFourWheelsRobot"    # Is `Solid.name`.
+  field SFString   controller      "void"                # Is `Robot.controller`.
+  field MFString   controllerArgs  []                    # Is `Robot.controllerArgs`.
+  field SFString   customData      ""                    # Is `Robot.customData`.
+  field SFBool     supervisor      FALSE                 # Is `Robot.supervisor`.
+  field SFBool     synchronization TRUE                  # Is `Robot.synchronization`.
+  field MFNode     extensionSlot   [ RobotisLds01 { } ]  # Extends the robot with new nodes in the extension slot.
+  ]
+  {
+	Robot {
+	    translation IS translation
+	    rotation IS rotation
+	    name IS name
+	    controller IS controller
+	    controllerArgs IS controllerArgs
+	    customData IS customData
+	    supervisor IS supervisor
+	    synchronization IS synchronization
+	    children [
+	  	    Transform {
+			rotation 0.5773503 -0.5773503 -0.5773503 2.0943951
+			translation -0.03 0 0.153
+			children IS extensionSlot
+		    }
+	    DEF BODY Transform {
+	      children [
+		DEF box1 Transform {
+		  translation -0.025 0 0.035
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		      }
+		      geometry Box {
+		        size 0.04 0.04 0.04
+		      }
+		    }
+		  ]
+		}
+		Shape {
+		  appearance PBRAppearance {
+		    baseColor 0 0 1
+		  }
+		  geometry Box {
+		    size 0.1 0.05 0.03
+		  }
+		}
+	      ]
+	    }
+	    DEF CASTER_JOINT BallJoint {
+	      jointParameters BallJointParameters {
+		position 10.305130127647427
+		anchor -0.03 0 -0.015
+	      }
+	      endPoint Solid {
+		translation -0.02999999830854705 5.273559366969494e-16 -0.01499865426748822
+		rotation -0.5525954479303097 -0.6936219755074965 0.4620896298552679 -2.67937455617861
+		children [
+		  Shape {
+		    appearance PBRAppearance {
+		    }
+		    geometry DEF CASTER_SPHERE Sphere {
+		      radius 0.015
+		    }
+		  }
+		]
+		name "solid(4)"
+		boundingObject USE CASTER_SPHERE
+		physics Physics {
+		}
+		locked TRUE
+		rotationStep 0.1
+		linearVelocity -0.03000000027836326 1.260192204512776e-09 5.5694584016227216e-08
+		angularVelocity 3.712972267723304e-06 2.608834614272101e-16 2.0000000185575586
+	      }
+	    }
+	    DEF LEFT DistanceSensor {
+	      translation 0.05 0.015 0
+	      children [
+		Shape {
+		  appearance PBRAppearance {
+		    baseColor 0 1 0
+		  }
+		  geometry Box {
+		    size 0.01 0.01 0.01
+		  }
+		}
+	      ]
+	      name "ds_left"
+	    }
+	    DEF RIGHT DistanceSensor {
+	      translation 0.05 -0.015 0
+	      children [
+		Shape {
+		  appearance PBRAppearance {
+		    baseColor 0 1 0
+		  }
+		  geometry Box {
+		    size 0.01 0.01 0.01
+		  }
+		}
+	      ]
+	      name "ds_right"
+	    }
+	    Camera {
+	      translation 0.035 0 0
+	      rotation 0.5773509358554485 0.5773509358554485 -0.5773489358556708 -2.094395307179586
+	      children [
+		Transform {
+		  translation 0 -0.02 0
+		  children [
+		    Shape {
+		      appearance PBRAppearance {
+		        baseColor 1 0 0
+		      }
+		      geometry Cylinder {
+		        height 0.03
+		        radius 0.01
+		      }
+		    }
+		  ]
+		}
+	      ]
+	      far 10
+	    }
+	    DEF WHEEL1 HingeJoint {
+	      jointParameters HingeJointParameters {
+		position 886.4118487569398
+		axis 0 1 0
+		anchor 0.04 0.038 0
+	      }
+	      device [
+		PositionSensor {
+		  name "left wheel sensor"
+		}
+		RotationalMotor {
+		  name "left wheel motor"
+		}
+	      ]
+	      endPoint Solid {
+		translation 0.04 0.038 0
+		rotation -0.795602927047898 -1.3043549240326702e-16 0.6058184401888219 3.141592653589793
+		children [
+		  DEF Wheel Shape {
+		    appearance PBRAppearance {
+		    }
+		    geometry Cylinder {
+		      height 0.02
+		      radius 0.03
+		    }
+		  }
+		]
+		boundingObject USE Wheel
+		physics Physics {
+		}
+		linearVelocity -0.03000000053345059 1.2620629463880466e-11 5.569743342230192e-08
+		angularVelocity 1.856495942259764e-06 6.035691997848088e-12 1.0000000177807673
+	      }
+	    }
+	    DEF WHEEL2 HingeJoint {
+	      jointParameters HingeJointParameters {
+		position 326.74790634937403
+		axis 0 1 0
+		anchor 0.04 -0.038 0
+	      }
+	      device [
+		RotationalMotor {
+		  name "right wheel motor"
+		}
+		PositionSensor {
+		  name "right wheel sensor"
+		}
+	      ]
+	      endPoint Solid {
+		translation 0.04 -0.038 0
+		rotation 0 -0.9999999999999999 0 1.51883292484334
+		children [
+		  DEF Wheel Shape {
+		    appearance PBRAppearance {
+		    }
+		    geometry Cylinder {
+		      height 0.02
+		      radius 0.03
+		    }
+		  }
+		]
+		name "solid(1)"
+		boundingObject USE Wheel
+		physics Physics {
+		}
+		linearVelocity -0.030000000533401152 1.1292052883990304e-11 5.569232708591416e-08
+		angularVelocity 1.8564960722103444e-06 6.139859941152177e-12 1.0000000177807662
+	      }
+	    }
+	  ]
+	  boundingObject DEF group Shape {
+	    appearance PBRAppearance {
+	      baseColor 0 0 1
+	    }
+	    geometry Box {
+	      size 0.1 0.03 0.05
+	    }
+	  }
+	  physics Physics {
+	  }
+	  controller "zhuy_controller"
+	  linearVelocity -0.030000000540145066 7.23454432522451e-10 5.5694560882011234e-08
+	  angularVelocity -1.738262396340765e-11 7.809498155874625e-12 1.7782489498069892e-08
+	}
+  }
